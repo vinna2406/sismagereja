@@ -14,6 +14,7 @@ class Pendeta extends Model
         'jenis_kelamin',
         'alamat',
         'no_telepon',
+        'foto',
         'status'
     ];
 

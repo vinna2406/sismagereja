@@ -15,9 +15,15 @@ class CreateBaptisTable extends Migration
     {
         Schema::create('baptis', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('anggota_id')->unsigned();
+            // $table->integer('anggota_id')->unsigned();
             $table->integer('pendeta_id')->unsigned();       
             $table->integer('user_id')->unsigned();
+            $table->string('nama');
+            $table->string('tempat_lahir');
+            $table->date('tanggal_lahir');
+            // $table->string('jenis_kelamin');
+            // $table->string('alamat');
+            // $table->string('no_telepon');
             $table->date('tgl_baptis');
             $table->string('keterangan');
             $table->enum('status', ['aktif','nonaktif']);
@@ -25,7 +31,7 @@ class CreateBaptisTable extends Migration
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('pendeta_id')->references('id')->on('pendetas');
-            $table->foreign('anggota_id')->references('id')->on('anggotas');
+            // $table->foreign('anggota_id')->references('id')->on('anggotas');
         });
     }
 

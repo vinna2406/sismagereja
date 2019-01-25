@@ -38,42 +38,64 @@
                         <div class="basic-form">
                             <form action="{{Help::url('baptis')}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Tanggal Baptis</label>
-                                        <input type="date" class="form-control" name="tgl_baptis">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Nama</label>
+                                            <input type="nama" class="form-control" placeholder="Nama" name="nama">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Pendeta</label>
-                                        <select class="form-control" name="pendeta_id">
-                                            @foreach($pendetas as $pendeta)
-                                                <option value="{{$pendeta->id}}">{{$pendeta->nama}}</option>
-                                            @endforeach
-                                        </select>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Tanggal Baptis</label>
+                                            <input type="date" class="form-control" name="tgl_baptis">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Anggota</label>
-                                        <select class="form-control" name="anggota_id">
-                                            @foreach($anggotas as $anggota)
-                                                <option value="{{$anggota->id}}">{{$anggota->nama}}</option>
-                                            @endforeach
-                                        </select>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Tempat Lahir</label>
+                                            <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Keterangan</label>
-                                        <input type="text" class="form-control" placeholder="Keterangan" name="keterangan">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Pendeta</label>
+                                            <select class="form-control" name="pendeta_id">
+                                                @foreach($pendetas as $pendeta)
+                                                    <option value="{{$pendeta->id}}">{{$pendeta->nama}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Tanggal Lahir</label>
+                                            <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Keterangan</label>
+                                            <input type="text" class="form-control" placeholder="Keterangan" name="keterangan">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                                <select class="form-control" name="status">
+                                                    <option value="Aktif">Aktif</option>
+                                                    <option value="Nonaktif">Non Aktif</option>
+                                                </select>
+                                        </div>
                                     </div>
                                 </div>   
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-check"></i>
-                                    Submit
+                                    <!-- <i class="fa fa-check"</i> -->
+                                    Simpan
                                 </button>
+                                <label>
+                                    <a href="{{Help::url('baptis')}}" class="btn btn-danger">Kembali</a>
+                                </label>
                             </form>
                         </div>
                     </div>

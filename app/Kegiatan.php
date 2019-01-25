@@ -9,11 +9,12 @@ class Kegiatan extends Model
     protected $table = 'kegiatans';
     protected $fillable = [
     	'user_id',
-    	'pendeta_id',
+    	// 'pendeta_id',
     	'nama_kegiatan',
+        'jenis_kegiatan',
+        'tanggal',
+        'nama_pendeta',
     	'lokasi',
-    	'tanggal',
-    	'jenis_kegiatan',
     	'keterangan',
     	'status'
     ];

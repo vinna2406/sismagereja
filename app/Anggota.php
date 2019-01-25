@@ -20,7 +20,7 @@ class Anggota extends Model
         'nm_anggota_keluarga',
     	'notlp_keluarga',
     	'status_keluarga',
-        'status_baptis',
+        // 'status_baptis',
     	'foto',
     	'status',
     ];

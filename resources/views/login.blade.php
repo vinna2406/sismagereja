@@ -24,10 +24,10 @@
                         <div class="login-content card" style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5); background-color: #364e68;">
                             <div class="login-form" style="background-color: #ebf0f6;">
                                 <div class="text-center">
-                                    <img src="{{url('images/gbi.png')}}" height="150px" width="150px">
+                                    <img src="{{url('images/gbi.png')}}" height="100px" width="100px">
                                 </div>
                                 <br>
-                                <h4>Login Page | SismaGereja</h4>
+                                <h4>Login Page | SismaGereja </h4>
                                 <form action="{{ url('/login')}}" method="POST">
                                     {{ csrf_field() }}
                                     <div class="form-group">

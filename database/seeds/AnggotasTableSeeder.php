@@ -27,7 +27,7 @@ class AnggotasTableSeeder extends Seeder
         		'status_keluarga' => 'Anak',
         		'status' => 'aktif',
         		'foto' => null,
-        		'status_baptis' => 'tidak_ada',
+        		// 'status_baptis' => 'tidak_ada',
         		'created_at' => now(),
         		'updated_at' => now()
         	]

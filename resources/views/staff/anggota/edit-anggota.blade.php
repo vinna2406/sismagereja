@@ -40,11 +40,10 @@
                              <div class="card-body">
                                 <h4 class="card-title">Edit Anggota</h4>
                                 <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
-                                <div>
+                                <!-- <div>
                                     <a href="{{Help::url('anggota')}}" class="btn btn-primary">Kembali</a>
-                                </div>
+                                </div> -->
                             </div>
-                            <br>
                             <br>
                             <div class="card">
                             <form action="{{Help::url('anggota/'.$anggotas->id.'/edit')}}" method="post" enctype="multipart/form-data">
@@ -60,18 +59,6 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label>Tempat Lahir</label>
-                                        <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" value="{{$anggotas->tempat_lahir}}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <label>Tanggal Lahir</label>
-                                        <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" value="{{$anggotas->tanggal_lahir}}">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
                                         <label>Jenis Kelamin</label>
                                         <select class="form-control" name="jenis_kelamin" value="{{$anggotas->jenis_kelamin}}">
                                             <option value="Laki-laki" {{$anggotas->jenis_kelamin == 'Laki-laki' ? 'selected' : ''}}>Laki-laki</option>
@@ -81,8 +68,20 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
+                                        <label>Tempat Lahir</label>
+                                        <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir" value="{{$anggotas->tempat_lahir}}">
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6">
+                                    <div class="form-group">
                                         <label>Alamat</label>
                                         <input type="text" class="form-control" placeholder="Alamat" name="alamat" value="{{$anggotas->alamat}}">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Tanggal Lahir</label>
+                                        <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir" value="{{$anggotas->tanggal_lahir}}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -105,7 +104,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <i><label>Data Keluarga / Orang Lain Yang Tinggal Serumah</label></i>
+                                <i><label>Data Anggota Keluarga Yang Dapat Dihubungi</label></i>
                                 <div class="row" style="color: black;">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -116,7 +115,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>No Telepon Anggota Keluarga</label>
-                                            <input type="text" class="form-control" placeholder="No Telepon Yang Dapat Dihubungi" name="notlp_keluarga" value="{{$anggotas->notlp_keluarga}}">
+                                            <input type="text" class="form-control" placeholder="No Telepon Anggota Keluarga" name="notlp_keluarga" value="{{$anggotas->notlp_keluarga}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -125,21 +124,11 @@
                                             <select class="form-control" name="status_keluarga" value="{{$anggotas->status_keluarga}}">
                                                 <option value="Ayah" {{$anggotas->status_keluarga == 'Ayah' ? 'selected' : ''}}>Ayah</option>
                                                 <option value="Ibu" {{$anggotas->status_keluarga == 'Ibu' ? 'selected' : ''}}>Ibu</option>
-                                                <option value="Kakak" {{$anggotas->status_keluarga == 'Kakak' ? 'selected' : ''}}>Kakak</option>
-                                                <option value="Adik" {{$anggotas->status_keluarga == 'Adik' ? 'selected' : ''}}>Adik</option>
-                                                <option value="Suami" {{$anggotas->status_keluarga == 'Suami' ? 'selected' : ''}}>Suami</option>
-                                                <option value="Istri" {{$anggotas->status_keluarga == 'Istri' ? 'selected' : ''}}>Istri</option>
-                                                <option value="Kakek" {{$anggotas->status_keluarga == 'Kakek' ? 'selected' : ''}}>Kakek</option>
-                                                <option value="Nenek" {{$anggotas->status_keluarga == 'Nenek' ? 'selected' : ''}}>Nenek</option>
+                                                <option value="Saudara" {{$anggotas->status_keluarga == 'Saudara' ? 'selected' : ''}}>Saudara</option>
+                                                <option value="Lain-lain" {{$anggotas->status_keluarga == 'Lain-lain' ? 'selected' : ''}}>Lain-lain</option>
                                             </select>
                                         </div>
                                     </div>                                                           
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Foto</label>
-                                            <input type="file" name="foto" value="{{$anggotas->foto}}">
-                                        </div>
-                                    </div>
                                 </div>
                                 <br>
                                 <i><label>Status di Gereja Bethel Indonesia Rayon 1-I</label></i>
@@ -147,17 +136,27 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Status</label>
-                                                <select class="form-control" name="status">
-                                                    <option value="Aktif">Aktif</option>
-                                                    <option value="Nonaktif">Non Aktif</option>
+                                                <select class="form-control" name="status" value="{{$anggotas->status}}">
+                                                    <option value="Aktif" {{$anggotas->status == 'Aktif' ? 'selected' : ''}}>Aktif</option>
+                                                    <option value="Nonaktif" {{$anggotas->status == 'Nonaktif' ? 'selected' : ''}}>Non Aktif</option>
                                                 </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Foto</label>
+                                            <br>
+                                            <input type="file" name="foto" value="{{$anggotas->foto}}">
                                         </div>
                                     </div>                                          
                                 </div>
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-check"></i>
-                                    Submit
+                                <button type="submit" class="btn btn-primary">
+                                    <!-- <i class="fa fa-check"></i> -->
+                                    Simpan
                                 </button>
+                                <label>
+                                    <a href="{{Help::url('anggota')}}" class="btn btn-danger">Kembali</a>
+                                </label>
                                 <!-- <a href="{{Help::url('anggota')}}" class="btn btn-secondary">Kembali</a> -->
                             </form>
                         </div>

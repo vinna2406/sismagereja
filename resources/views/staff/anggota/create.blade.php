@@ -40,11 +40,7 @@
                              <div class="card-body" >
                                 <h4 class="card-title" style="color: black;">Tambah Anggota</h4>
                                 <h6 class="card-subtitle" >Gereja Bethel Indonesia Rayon 1-I</h6>
-                                <div>
-                                    <a href="{{Help::url('anggota')}}" class="btn btn-primary">Kembali</a>
-                                </div>
                             </div>
-                            <br>
                             <br>
                             <form action="{{Help::url('anggota')}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
@@ -58,18 +54,6 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Tempat Lahir</label>
-                                            <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Tanggal Lahir</label>
-                                            <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
                                             <label>Jenis Kelamin</label>
                                             <select class="form-control" name="jenis_kelamin">
                                                 <option value="Laki-laki">Laki-laki</option>
@@ -79,8 +63,20 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
+                                            <label>Tempat Lahir</label>
+                                            <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
+                                        </div>
+                                    </div>
+                                     <div class="col-lg-6">
+                                        <div class="form-group">
                                             <label>Alamat</label>
                                             <input type="text" class="form-control" placeholder="Alamat" name="alamat">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Tanggal Lahir</label>
+                                            <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -103,7 +99,7 @@
                                     </div>
                                 </div>
                                 <br>
-                                <i><label>Data Keluarga Yang Tinggal Serumah</label></i>
+                                <i><label>Data Anggota Keluarga Yang Dapat DiHubungi</label></i>
                                 <div class="row" style="color: black;">
                                     <div class="col-lg-6">
                                         <div class="form-group">
@@ -114,7 +110,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>No Telepon Anggota Keluarga</label>
-                                            <input type="text" class="form-control" placeholder="No Telepon Yang Dapat Dihubungi" name="notlp_keluarga">
+                                            <input type="text" class="form-control" placeholder="No Telepon Anggota Keluarga" name="notlp_keluarga">
                                         </div>
                                     </div>                    
                                     <div class="col-lg-6">
@@ -123,22 +119,11 @@
                                             <select class="form-control" name="status_keluarga">
                                                 <option value="Ayah">Ayah</option>
                                                 <option value="Ibu">Ibu</option>
-                                                <option value="Kakak">Kakak</option>
-                                                <option value="Adik">Adik</option>
-                                                <option value="Suami">Suami</option>
-                                                <option value="Istri">Istri</option>
-                                                <option value="Kakek">Kakek</option>
-                                                <option value="Nenek">Nenek</option>
+                                                <option value="Saudara">Saudara</option>
+                                                <option value="Lain-lain">Lain-lain</option>
                                             </select>
                                         </div>
-                                    </div>                                    
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Foto</label>
-                                            <br>
-                                            <input type="file" name="foto">
-                                        </div>
-                                    </div>
+                                    </div>                                      
                                 </div>
                                 <br>
                                 <i><label>Status di Gereja Bethel Indonesia Rayon 1-I</label></i>
@@ -151,12 +136,22 @@
                                                     <option value="Nonaktif">Non Aktif</option>
                                                 </select>
                                         </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Foto</label>
+                                            <br>
+                                            <input type="file" name="foto">
+                                        </div>
                                     </div>                                          
                                 </div>
-                                <button type="submit" class="btn btn-danger">
-                                    <i class="fa fa-check"></i>
-                                    Submit
+                                <button type="submit" class="btn btn-primary">
+                                    <!-- <i class="fa fa-check"</i> -->
+                                    Simpan
                                 </button>
+                                <label>
+                                    <a href="{{Help::url('anggota')}}" class="btn btn-danger">Kembali</a>
+                                </label>
                             </form>
                         </div>
                     </div>

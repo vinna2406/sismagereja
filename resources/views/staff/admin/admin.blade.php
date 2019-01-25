@@ -21,7 +21,7 @@
                         <h4 class="card-title">Data Admin</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon I-1 Bali</h6>
                         <div>
-                            <a href="{{Help::url('anggota/tambah-admin')}}" class="btn btn-danger">Tambah Admin</a>
+                            <a href="{{Help::url('admin/tambah-admin')}}" class="btn btn-danger">Tambah Admin</a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
@@ -49,9 +49,9 @@
                                             <td>{{$item->no_telepon}}</td>
                                             <td>
                                                 @if($item->status == 'aktif')
-                                                    <label class="alert alert-info" style="padding: 1px 20px; font-size: 16px"><i class="fa fa-check"></i> Aktif</label>
+                                                    <label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: green;"><i class="fa fa-check"></i> Aktif</label>
                                                 @else
-                                                    <label class="alert alert-danger" style="padding: 1px 20px; font-size: 16px"><i class="fa fa-exclamation-triangle"></i> Non Aktif</label>
+                                                    <label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: red;"><i class="fa fa-exclamation-triangle"></i> Non Aktif</label>
                                                 @endif
                                             </td>
                                             <td>
@@ -76,10 +76,11 @@
                                                                     <h4>Jenis Kelamin</h4>
                                                                     <h4>Alamat</h4>
                                                                     <h4>No Telepon</h4>
+                                                                <!--     <h4>Password</h4> -->
                                                                     <h4>Status</h4>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-8">
+                                                            <div class="col-md-4">
                                                                 <h4>: {{$item->nama}}</h4>
                                                                 <h4>: {{$item->email}}</h4>
                                                                 <h4>: {{$item->tempat_lahir}}</h4>
@@ -87,7 +88,11 @@
                                                                 <h4>: {{$item->jenis_kelamin}}</h4>
                                                                 <h4>: {{$item->alamat}}</h4>
                                                                 <h4>: {{$item->no_telepon}}</h4>
+                                                            <!--     <h4>: {{$item->password}}</h4> -->
                                                                 <h4>: {{$item->status}}</h4>
+                                                            </div>
+                                                            <div class="col-md-4" style="float: right;">
+                                                                <img src="{{url('images/admin/'.$item->foto)}}" width="200px">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -107,6 +112,7 @@
         </div>
     </div>
     @endsection
+
     @section('js')
         <script src="{{asset('backend/js/lib/datatables/datatables.min.js')}}"></script>
         <script src="{{asset('backend/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js')}}"></script>
@@ -117,9 +123,18 @@
         <script src="{{asset('backend/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js')}}"></script>
         <script src="{{asset('backend/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js')}}"></script>
         <script src="{{asset('backend/js/lib/datatables/datatables-init.js')}}"></script>
+        <script src="{{asset('backend/js/bootbox.min.js')}}"></script>
         <script type="text/javascript">
-            function showDetail() {
-                $('#detailAdmin').modal('show');
+            function lihatFoto(foto){
+                bootbox.dialog({
+                    message: '<img src="{{asset('images/admin/')}}/'+foto+'" class="img-responsive"><a href="{{Help::url('admin')}}" class="btn btn-secondary btn-block pull-right" style="margin-top: 5px">Back</a>',
+                    size: 'small',
+                    closeButton: false, 
+                });
             }
+
+                function showDetail() {
+                    $('#detailAdmin').modal('show');
+                }
         </script>
     @endsection

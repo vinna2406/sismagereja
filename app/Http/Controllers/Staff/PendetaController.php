@@ -25,6 +25,7 @@ class PendetaController extends Controller
     	 	'jenis_kelamin' => 'required',
     	 	'alamat' => 'required',
     	 	'no_telepon' => 'required',
+            'foto' => 'required',
         ]);
 
     	if (!$validator->fails()) {
@@ -85,6 +86,5 @@ class PendetaController extends Controller
 
     	 Session::flash('success', 'Pendeta baru berhasil ditambahkan!');
          return redirect(Help::url('pendeta'));
-
     }
 }

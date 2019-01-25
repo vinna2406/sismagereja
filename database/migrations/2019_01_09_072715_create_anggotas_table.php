@@ -29,7 +29,7 @@ class CreateAnggotasTable extends Migration
             $table->string('status_keluarga');
             $table->string('foto')->nullable();
             $table->enum('status', ['aktif','nonaktif']);
-            $table->enum('status_baptis', ['ada', 'tidak_ada'])->default('tidak_ada');
+            // $table->enum('status_baptis', ['ada', 'tidak_ada'])->default('tidak_ada');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

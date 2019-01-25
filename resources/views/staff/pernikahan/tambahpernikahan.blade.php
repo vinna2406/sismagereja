@@ -6,13 +6,14 @@
 
 @section('content')
 
-<div class="page-wrapper">
+<div class="page-wrapper" style="background-color: #f2f4fb;" >
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
-            <h3 class="text-primary">Tambah Pernikahan</h3> </div>
+            <h3 class="text-primary">Pernikahan</h3> </div>
         <div class="col-md-7 align-self-center">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Pernikahan</a></li>
                 <li class="breadcrumb-item active">Tambah Pernikahan</li>
             </ol>
         </div>
@@ -33,12 +34,17 @@
                       {{Session::get('error')}}
                   </div>
                 @endif
-                <div class="card">
+                <div class="card" style="background-color: #ebf0f6;">
                     <div class="card-body">
                         <div class="basic-form">
+                             <div class="card-body" >
+                                <h4 class="card-title" style="color: black;">Tambah Pernikahan</h4>
+                                <h6 class="card-subtitle" >Gereja Bethel Indonesia Rayon 1-I</h6>
+                            </div>
+                            <br>
                             <form action="{{Help::url('pernikahan')}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
-                                <div class="row">
+                                <div class="row" style="color: black;">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Nama Pria</label>
@@ -118,10 +124,32 @@
                                         </div>
                                     </div>
                                 </div>
+                                <i><label>Status di Gereja Bethel Indonesia Rayon 1-I</label></i>
+                                <div class="row" style="color: black;">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Status</label>
+                                                <select class="form-control" name="status">
+                                                    <option value="Aktif">Aktif</option>
+                                                    <option value="Nonaktif">Non Aktif</option>
+                                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Foto</label>
+                                            <br>
+                                            <input type="file" name="foto">
+                                        </div>
+                                    </div>       
+                                </div>
                                 <button type="submit" class="btn btn-primary">
-                                    <i class="fa fa-check"></i>
-                                    Submit
+                                    <!-- <i class="fa fa-check"</i> -->
+                                    Simpan
                                 </button>
+                                <label>
+                                    <a href="{{Help::url('pernikahan')}}" class="btn btn-danger">Kembali</a>
+                                </label>
                             </form>
                         </div>
                     </div>

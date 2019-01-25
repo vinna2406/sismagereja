@@ -21,6 +21,7 @@ class CreatePendetasTable extends Migration
             $table->string('jenis_kelamin');
             $table->string('alamat');
             $table->string('no_telepon');
+            $table->string('foto')->nullable();
             $table->enum('status', ['aktif','nonaktif']);
             $table->timestamps();
         });

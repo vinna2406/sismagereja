@@ -29,6 +29,7 @@ class CreatePernikahansTable extends Migration
             $table->date('tgl_pernikahan');
             $table->string('lokasi');
             $table->string('keterangan');
+            $table->string('foto')->nullable();
             $table->enum('status', ['aktif','nonaktif']);
             $table->timestamps();
 

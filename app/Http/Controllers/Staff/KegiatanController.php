@@ -26,6 +26,7 @@ class KegiatanController extends Controller
 	    	'lokasi' => 'required',
 	    	'tanggal' => 'required',
 	    	'jenis_kegiatan' => 'required',
+            'nama_pendeta' => 'required',
 	    	'keterangan' => 'required'
         ]);
 
@@ -34,12 +35,13 @@ class KegiatanController extends Controller
     	 if (!$validator->fails()) {
     	 	$kegiatan = Kegiatan::create([
     	 	'user_id' => auth()->user()->id,
-    	 	'pendeta_id' => $r->pendeta_id,
+    	 	// 'pendeta_id' => $r->pendeta_id,
     	 	'nama_kegiatan' => $r->nama_kegiatan,
     	 	'lokasi' => $r->lokasi,
     	 	'tanggal' => $r->tanggal,
     	 	'jenis_kegiatan' => $r->jenis_kegiatan,
     	 	'keterangan' => $r->keterangan,
+            'nama_pendeta' => $r->nama_pendeta,
     	 	'status' => 'aktif'
     	 ]);
     	 	Session::flash('success', 'Kegiatan baru berhasil ditambahkan!');
@@ -59,7 +61,7 @@ class KegiatanController extends Controller
 
     public function showKegiatan($id){
     	$pendetas = Kegiatan::findOrFail($id);
-    	return view('staff.kegiatan.kegiatan', compact('pendetas'));
+    	return view('staff.kegiatan.kegiatan', compact('kegiatans'));
     }
 
     public function editKegiatan($id){
@@ -70,11 +72,11 @@ class KegiatanController extends Controller
     public function updateKegiatan(Request $r, $id){
     	$validator = Validator::make($r->all(),[
     	 	'nama_kegiatan' => 'required',
-    	 	'lokasi' => 'required',
-    	 	'tanggal' => 'required',
-    	 	'jenis_kegiatan' => 'required',
-    	 	'keterangan' => 'required',
-    	 	'no_telepon' => 'required',
+            'lokasi' => 'required',
+            'tanggal' => 'required',
+            'jenis_kegiatan' => 'required',
+            'nama_pendeta' => 'required',
+            'keterangan' => 'required'
         ]);
 
         // dd($r->all());
@@ -85,6 +87,7 @@ class KegiatanController extends Controller
     	 	'tanggal' => $r->tanggal,
     	 	'jenis_kegiatan' => $r->jenis_kegiatan,
     	 	'keterangan' => $r->keterangan,
+            'nama_pendeta' => $r->nama_pendeta,
     	 	'status' => 'aktif'
     	]);
 

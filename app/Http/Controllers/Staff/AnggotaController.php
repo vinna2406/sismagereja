@@ -127,7 +127,7 @@ class AnggotaController extends Controller
                 'foto' => $filename,
                 'status' => $r->status
              ]);
-             Session::flash('success', 'Anggota baru berhasil ditambahkan!');
+             Session::flash('success', 'Data Anggota baru berhasil ditambahkan!');
              return redirect(Help::url('anggota'));
             }
         }else{

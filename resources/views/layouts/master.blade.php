@@ -24,7 +24,11 @@
         @include('layouts.header')
         @include('layouts.navigation')
         @yield('content')
-            <footer class="footer"> © 2018 All rights reserved. Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
+            <footer class="footer"> 
+                <center>
+                    Copyright © Gereja Bethel Indonesia Rayon 1-I Bali 2019
+                </center>
+            </footer>
         </div>
     </div>
     <script src="{{asset('backend/js/lib/jquery/jquery.min.js')}}"></script>

@@ -8,9 +8,15 @@ class Baptis extends Model
 {
     protected $table = 'baptis';
     protected $fillable = [
-    	'anggota_id',
+    	// 'anggota_id',
     	'pendeta_id',
     	'user_id',
+        'nama',
+        'tempat_lahir',
+        'tanggal_lahir',
+        // 'jenis_kelamin',
+        // 'alamat',
+        // 'no_telepon',
     	'tgl_baptis',
     	'keterangan',
     	'status',

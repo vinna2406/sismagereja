@@ -22,6 +22,7 @@ class Pernikahan extends Model
     	'tgl_pernikahan',
     	'lokasi',
     	'keterangan',
+        'foto',
     	'status',
     ];
 

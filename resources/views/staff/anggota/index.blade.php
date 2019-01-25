@@ -21,23 +21,23 @@
                         <h4 class="card-title">Data Anggota</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
                         <div>
-                        	<a href="{{Help::url('anggota/tambah-anggota')}}" class="btn btn-danger">Tambah Anggota </a>
+                        	<a href="{{Help::url('anggota/tambah-anggota')}}" class="btn btn-primary">Tambah Anggota </a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama</th>
+                                        <th style="text-align:center;" >Nama</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Jenis Kelamin</th>
-                                        <th>Nama Ibu</th>
-                                        <th>Status</th>
+                                        <th style="text-align:center;" >Nama Ibu</th>
+                                        <th style="text-align:center;" >Status</th>
                                         <!-- <th>Foto</th>
                                         <th>Status</th>
                                         <th>Baptis</th>
                                         <th>Staff</th> -->
-                                        <th style="text-align:center; ">Opsi</th>
+                                        <th style="text-align:center;" >Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,7 +58,7 @@
                                     			@if($item->status == 'aktif')
                                     				<label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: green;"><i class="fa fa-check"></i> Aktif</label>
                                     			@else
-                                    				<label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px color: red;"><i class="fa fa-exclamation-triangle"></i> Non Aktif</label>
+                                    				<label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: red;"><i class="fa fa-exclamation-triangle"></i> Non Aktif</label>
                                     			@endif
                                     		</td>
                                     		<!-- <td>
@@ -77,7 +77,7 @@
                                     			{{$item->user->nama}}
                                     		</td> -->
                                     		<td>
-                                    			<center><button class="btn btn-primary" data-toggle="modal" data-target="#detailAnggota{{ $item->id }}">Lihat</button>
+                                    			<center><button class="btn btn-info" data-toggle="modal" data-target="#detailAnggota{{ $item->id }}">Lihat</button>
                                     			<a href="{{Help::url('anggota/'.$item->id.'/edit')}}" class="btn btn-warning ">Edit</a></center>
                                     		</td>
                                     	</tr>
@@ -85,7 +85,6 @@
 					                        <div class="modal-dialog modal-lg">
 					                            <div class="modal-content">
 					                                <div class="modal-header">
-					                                    
 					                                    <h4 class="modal-title" id="myModalLabel">Nama Anggota : {{$item->nama}}</h4>
 					                                </div>
 					                                <div class="modal-body">
@@ -124,10 +123,9 @@
 						                                    	<img src="{{url('images/anggota/'.$item->foto)}}" width="200px">
 						                                    </div>
 					                                    </div>
-					                                   	
 					                                </div> 
 					                                <div class="modal-footer">
-					                                    <a href="{{Help::url('anggota')}}" class="btn btn-primary btn-md">Kembali</a>
+					                                    <a href="{{Help::url('anggota')}}" class="btn btn-danger">Kembali</a>
 					                                </div>
 					                            </div>
 					                        </div>
