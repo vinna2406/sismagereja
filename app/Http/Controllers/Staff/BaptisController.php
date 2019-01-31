@@ -75,7 +75,7 @@ class BaptisController extends Controller
     }
 
     public function indexBaptis(){
-    	$baptis = baptis::all();
+    	$baptis = Baptis::all();
     	return view('staff.baptis.baptis', compact('baptis'));
     }   
 

@@ -79,7 +79,7 @@
                                                                 <h4>: {{$item->tempat_lahir}}</h4>
                                                                 <h4>: {{$item->tanggal_lahir}}</h4>
                                                                 <h4>: {{$item->tgl_baptis}}</h4>
-                                                                <h4>: {{$item->pendeta}}</h4>
+                                                                <h4>: {{$item->pendeta_id}}</h4>
                                                                 <h4>: {{$item->keterangan}}</h4>
                                                                 <h4>: {{$item->status}}</h4>
                                                             </div>
