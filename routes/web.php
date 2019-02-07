@@ -88,3 +88,7 @@ Route::group(['middleware' => 'role:pendeta', 'prefix' => 'pendeta', 'namespace'
 
     // kalo mau nambah controller baru di pendeta
 });
+
+Route::get('/app',function(){
+    return view('frontend.layouts.app');
+});
