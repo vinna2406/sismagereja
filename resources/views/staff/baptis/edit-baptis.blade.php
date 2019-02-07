@@ -42,29 +42,27 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Tempat Lahir </label>
-                                            <input type="text" class="form-control" placeholder="Tanggal Baptis " name="tempat_lahir" value="{{$baptis->tempat_lahir}}">
+                                            <input type="text" class="form-control" placeholder="Tempat Lahir " name="tempat_lahir" value="{{$baptis->tempat_lahir}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Pendeta</label>
                                             <select class="form-control" name="pendeta_id">
-                                                @foreach($pendetas as $pendeta)
-                                                    <option value="{{$pendeta->id}}">{{$pendeta->nama}}</option>
-                                                @endforeach
+                                                <option value="{{$pendetas->id}}">{{$pendetas->nama}}</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Tanggal Lahir</label>
-                                            <input type="date" class="form-control" placeholder="Tanggal Baptis " name="tanggal_lahir" value="{{$baptis->tanggal_lahir}">
+                                            <input type="date" class="form-control" placeholder="Tanggal Baptis " name="tanggal_lahir" value="{{$baptis->tanggal_lahir}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Keterangan</label>
-                                            <input type="text" class="form-control" placeholder="keterangan" name="keterangan" value="{{$baptis->keterangan}}">
+                                            <input type="text" class="form-control" placeholder="Keterangan" name="keterangan" value="{{$baptis->keterangan}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

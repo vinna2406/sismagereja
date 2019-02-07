@@ -86,7 +86,9 @@ class BaptisController extends Controller
 
     public function editBaptis($id){
     	$baptis = Baptis::findOrFail($id);
-    	return view('staff.baptis.edit-baptis', compact('baptis'));
+        $id_pendeta = $baptis->pendeta_id;
+        $pendetas = Pendeta::where('id', '=', $id_pendeta)->first();
+        return view('staff.baptis.edit-baptis', compact('baptis', 'pendetas'));
     }
 
     public function updateBaptis(Request $r, $id){
@@ -104,6 +106,8 @@ class BaptisController extends Controller
         // dd($r->all());
 
     	$baptis = baptis::findOrFail($id)->update([
+            'user_id' => auth()->user()->id,
+            'pendeta_id' => $r->pendeta_id,
             'nama' => $r->nama,
             'tempat_lahir' => $r->tempat_lahir,
             'tanggal_lahir' => $r->tanggal_lahir,

@@ -39,18 +39,18 @@ class User extends Authenticatable
     ];
 
     public function Anggota(){
-        return $this->hasOne('app\Anggota');
+        return $this->hasOne('App\Anggota');
     }
 
     public function Kegiatan(){
-        return $this->hasOne('app\Kegiatan');
+        return $this->hasOne('App\Kegiatan');
     }
 
     public function Baptis(){
-        return $this->hasOne('app\Baptis');
+        return $this->hasOne('App\Baptis');
     }
 
     public function Pernikahan(){
-        return $this->hasOne('app\Pernikahan');
+        return $this->hasOne('App\Pernikahan');
     }
 }

@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" >
             <div class="col-lg-12">
                 @if (Session::has('success'))
                   <div class="alert alert-success alert-dismissible">
@@ -45,7 +45,7 @@
                             <form action="{{Help::url('anggota')}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <i><Label>Data Pribadi</Label></i>
-                                <div class="row" style="color: black;">
+                                <div class="row" style="color: black;" >
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Nama</label>
@@ -99,17 +99,17 @@
                                     </div>
                                 </div>
                                 <br>
-                                <i><label>Data Anggota Keluarga Yang Dapat DiHubungi</label></i>
+                                <i><label>Kontak Yang Bisa Dihubungi</label></i>
                                 <div class="row" style="color: black;">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Nama Anggota Keluarga</label>
+                                            <label>Nama Kontak Yang Bisa Dihubungi</label>
                                             <input type="text" class="form-control" placeholder="Nama Anggota Keluarga" name="nm_anggota_keluarga">
                                         </div>
                                     </div>                                          
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>No Telepon Anggota Keluarga</label>
+                                            <label>No Telepon</label>
                                             <input type="text" class="form-control" placeholder="No Telepon Anggota Keluarga" name="notlp_keluarga">
                                         </div>
                                     </div>                    
@@ -143,7 +143,7 @@
                                             <br>
                                             <input type="file" name="foto">
                                         </div>
-                                    </div>                                          
+                                    </div>                                              
                                 </div>
                                 <button type="submit" class="btn btn-primary">
                                     <!-- <i class="fa fa-check"</i> -->

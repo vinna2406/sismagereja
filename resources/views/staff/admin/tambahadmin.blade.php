@@ -54,15 +54,6 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Jenis Kelamin</label>
-                                            <select class="form-control" name="jenis_kelamin">
-                                                <option value="Laki-laki">Laki-laki</option>
-                                                <option value="Perempuan">Perempuan</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
                                             <label>Tempat Lahir</label>
                                             <input type="text" class="form-control" placeholder="Tempat Lahir" name="tempat_lahir">
                                         </div>
@@ -79,10 +70,19 @@
                                             <input type="date" class="form-control" placeholder="Tanggal Lahir" name="tanggal_lahir">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-3">
                                         <div class="form-group">
                                             <label>No Telepon</label>
                                             <input type="text" class="form-control" placeholder="No Telepon" name="no_telepon">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Jenis Kelamin</label>
+                                            <select class="form-control" name="jenis_kelamin">
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
@@ -94,7 +94,14 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="text" class="form-control" placeholder="Password" name="password">
+                                            <input type="password" class="form-control" placeholder="Password" id="password" name="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Ulangi Password</label>
+                                            <input type="password" class="form-control" placeholder="Ulangi Password" name="confirm_password" id="confirm_password">
+                                            <span id="message"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -133,4 +140,16 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+        $('#confirm_password').on('keyup', function(){
+            if($(this).val() == $('#password').val()){
+                $('#message').html('Password sama').css('color', 'green');
+            }else{
+                $('#message').html('Password tidak sama').css('color', 'red');
+            }
+        })
+    </script>
 @endsection

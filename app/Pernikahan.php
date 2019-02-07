@@ -27,6 +27,6 @@ class Pernikahan extends Model
     ];
 
     public function User(){
-        return $this->belongsTo('app\User');
+        return $this->belongsTo('App\User');
     }
 }

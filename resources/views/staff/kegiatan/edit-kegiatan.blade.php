@@ -73,8 +73,8 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Pendeta</label>
-                                            <input type="text" class="form-control" placeholder="Pendeta" name="Pendeta" value="{{$kegiatans->nama_pendeta}}">
+                                            <label>Pemimpin Kegiatan</label>
+                                            <input type="text" class="form-control" placeholder="Pemimpin Kegiatan" name="nama_pendeta" value="{{$kegiatans->nama_pendeta}}">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

@@ -16,7 +16,7 @@
         </div>
         <div class="container-fluid">
             <!-- <div class="row"> -->
-                <div class="card" style="background-color: #ebf0f6;">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Pernikahan</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
@@ -26,13 +26,14 @@
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center;" >
                                         <th>No</th>
                                         <th>Nama Pria</th>
                                         <th>Nama Wanita</th>
                                         <th>Tanggal Pernikahan</th>
+                                        <th>Lokasi</th>
                                         <th>Status</th>                                     
-                                        <th>Opsi</th>
+                                        <th style="text-align:center;" >Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,11 +41,16 @@
                                         $no=1;
                                     @endphp
                                     @foreach($pernikahans as $item)
-                                        <tr>
+                                    @php
+                                        $tgl = $item->tgl_pernikahan;
+                                        $tgl_pernikahan = date('d/m/Y', strtotime($tgl));
+                                    @endphp
+                                        <tr >
                                             <td>{{$no++}}</td>
                                             <td>{{$item->nama_pria}}</td>
                                             <td>{{$item->nama_wanita}}</td>
-                                            <td>{{$item->tgl_pernikahan}}</td>
+                                            <td>{{$tgl_pernikahan}}</td>
+                                            <td>{{$item->lokasi}}</td>
                                             <td>
                                                 @if($item->status == 'aktif')
                                                     <label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: green;"><i class="fa fa-check"></i> Aktif</label>
@@ -95,7 +101,7 @@
                                                                     <h4>Status</h4>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-4">
+                                                            <div class="col-md-5">
                                                                 <h4>: {{$item->nama_pria}}</h4>
                                                                 
                                                                 <h4>: 
@@ -121,8 +127,8 @@
                                                                 <h4>: {{$item->keterangan}}</h4>
                                                                 <h4>: {{$item->status}}</h4>
                                                             </div>
-                                                            <div class="col-md-4" style="float: right;">
-                                                                <img src="{{url('images/pernikahan/'.$item->foto)}}" width="200px">
+                                                            <div class="col-md-3" style="float: right;">
+                                                                <img src="{{url('images/pernikahan/'.$item->foto)}}" width="150px">
                                                             </div>
                                                         </div>
                                                     </div>

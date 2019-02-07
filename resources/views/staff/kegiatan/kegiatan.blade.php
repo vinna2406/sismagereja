@@ -16,7 +16,7 @@
         </div>
         <div class="container-fluid">
             <!-- <div class="row"> -->
-                <div class="card" style="background-color: #ebf0f6;">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Kegiatan</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
@@ -26,13 +26,13 @@
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center;" >
                                         <th>No</th>
                                         <th>Nama Kegiatan</th>
                                         <th>Tanggal</th>
-                                        <th>Jenis Kegiatan</th> 
+                                        <th>Pemimpin Kegiatan</th> 
                                         <th>Status</th>                                    
-                                        <th>Opsi</th>
+                                        <th style="text-align:center;" >Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,11 +40,15 @@
                                         $no=1;
                                     @endphp
                                     @foreach($kegiatans as $item)
+                                    @php
+                                        $tgl = $item->tanggal;
+                                        $tanggal = date('d/m/Y', strtotime($tgl));
+                                    @endphp
                                         <tr>
                                             <td>{{$no++}}</td>
                                             <td>{{$item->nama_kegiatan}}</td>
-                                            <td>{{$item->tanggal}}</td>
-                                            <td>{{$item->jenis_kegiatan}}</td>
+                                            <td>{{$tanggal}}</td>
+                                            <td>{{$item->nama_pendeta}}</td>
                                             <td>
                                                 @if($item->status == 'aktif')
                                                     <label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: green;"><i class="fa fa-check"></i> Aktif</label>
@@ -70,6 +74,7 @@
                                                                     <h4>Nama Kegiatan</h4>
                                                                     <h4>Lokasi</h4>
                                                                     <h4>Tanggal</h4>
+                                                                    <h4>Pemimpin Kegiatan</h4>
                                                                     <h4>Jenis Kegiatan</h4>
                                                                     <h4>Keterangan</h4>
                                                                     <h4>Status</h4>
@@ -79,6 +84,7 @@
                                                                 <h4>: {{$item->nama_kegiatan}}</h4>
                                                                 <h4>: {{$item->lokasi}}</h4>
                                                                 <h4>: {{$item->tanggal}}</h4>
+                                                                <h4>: {{$item->nama_pendeta}}</h4>
                                                                 <h4>: {{$item->jenis_kegiatan}}
                                                                 <h4>: {{$item->keterangan}}</h4>
                                                                 <h4>: {{$item->status}}</h4>
@@ -126,4 +132,9 @@
                     $('#detailAnggota').modal('show');
                 }
         </script> -->
+        <script type="text/javascript">
+            function showDetail() {
+                $('#detailKegiatan').modal('show');
+            }
+        </script>
     @endsection

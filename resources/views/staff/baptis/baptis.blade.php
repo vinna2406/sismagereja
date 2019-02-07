@@ -16,7 +16,7 @@
         </div>
         <div class="container-fluid">
             <!-- <div class="row"> -->
-                <div class="card" style="background-color: #ebf0f6;">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Baptis</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
@@ -26,12 +26,13 @@
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center;">
                                         <th>No</th>
                                         <th>Nama</th>
+                                        <th>Tanggal Lahir</th>
                                         <th>Tanggal Baptis</th>
                                         <th>Status</th>                                     
-                                        <th>Opsi</th>
+                                        <th style="text-align:center;" >Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -39,10 +40,17 @@
                                         $no=1;
                                     @endphp
                                     @foreach($baptis as $item)
+                                    @php
+                                        $tgl = $item->tanggal_lahir;
+                                        $tanggal_lahir = date('d/m/Y', strtotime($tgl));
+                                        $tgl2 = $item->tgl_baptis;
+                                        $tanggal_baptis = date('d/m/Y', strtotime($tgl2));
+                                    @endphp
                                         <tr>
                                             <td>{{$no++}}</td>
                                             <td>{{$item->nama}}</td>
-                                            <td>{{$item->tgl_baptis}}</td>
+                                            <td>{{$tanggal_lahir}}</td>
+                                            <td>{{$tanggal_baptis}}</td>
                                             <td>
                                                 @if($item->status == 'aktif')
                                                     <label class="alert alert-normal" style="padding: 1px 20px; font-size: 16px; color: green;"><i class="fa fa-check"></i> Aktif</label>
@@ -51,7 +59,7 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <<center><button class="btn btn-info" data-toggle="modal" data-target="#detailBaptis{{ $item->id }}">Lihat</button>
+                                                <center><button class="btn btn-info" data-toggle="modal" data-target="#detailBaptis{{ $item->id }}">Lihat</button>
                                                 <a href="{{Help::url('baptis/'.$item->id.'/edit')}}" class="btn btn-warning ">Edit</a></center>
                                             </td>
                                         </tr>
@@ -79,7 +87,7 @@
                                                                 <h4>: {{$item->tempat_lahir}}</h4>
                                                                 <h4>: {{$item->tanggal_lahir}}</h4>
                                                                 <h4>: {{$item->tgl_baptis}}</h4>
-                                                                <h4>: {{$item->pendeta_id}}</h4>
+                                                                <h4>: {{$item->pendeta->nama}}</h4>
                                                                 <h4>: {{$item->keterangan}}</h4>
                                                                 <h4>: {{$item->status}}</h4>
                                                             </div>

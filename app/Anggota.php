@@ -26,10 +26,10 @@ class Anggota extends Model
     ];
 
     public function User(){
-    	return $this->belongsTo('app\User');
+    	return $this->belongsTo('App\User');
     }
 
     public function Baptis(){
-        return $this->belongsTo('app\Baptis');
+        return $this->belongsTo('App\Baptis');
     }
 }

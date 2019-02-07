@@ -46,62 +46,69 @@
                                 {{ csrf_field() }}
                                 <div class="row" style="color: black;">
                                     <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Nama Pria</label>
-                                            <input type="text" class="form-control" placeholder="Nama Pria " name="nama_pria">
-                                        </div>
+                                        <label><i>Mempelai Pria</i></label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label><i>Mempelai Pria</i></label>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Nama Wanita</label>
+                                            <label>Nama</label>
+                                            <input type="text" class="form-control" placeholder="Nama Pria " name="nama_pria">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Nama</label>
                                             <input type="text" class="form-control" placeholder="Nama Wanita" name="nama_wanita">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Tempat Lahir Pria</label>
+                                            <label>Tempat Lahir</label>
                                             <input type="text" class="form-control" placeholder="Tempat Lahir Pria" name="tempat_lahir_pria">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Tempat Lahir Wanita</label>
+                                            <label>Tempat Lahir</label>
                                             <input type="text" class="form-control" placeholder="Tempat Lahir Wanita" name="tempat_lahir_wanita">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Tanggal Lahir Pria</label>
+                                            <label>Tanggal Lahir</label>
                                             <input type="date" class="form-control" placeholder="Tanggal Lahir Pria" name="tgllahir_pria">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Tanggal Lahir Wanita</label>
+                                            <label>Tanggal Lahir</label>
                                             <input type="date" class="form-control" placeholder="Tanggal Lahir Wanita" name="tgllahir_wanita">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Nama Ayah Pria</label>
+                                            <label>Nama Ayah</label>
                                             <input type="text" class="form-control" placeholder="Nama Ayah Pria" name="nama_ayah_pria">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Nama Ayah Wanita</label>
+                                            <label>Nama Ayah </label>
                                             <input type="text" class="form-control" placeholder="Nama Ayah Wanita" name="nama_ayah_wanita">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Nama Ibu Pria</label>
+                                            <label>Nama Ibu</label>
                                             <input type="text" class="form-control" placeholder="Nama Ibu Pria" name="nama_ibu_pria">
                                         </div>
                                     </div>
                                      <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Nama Ibu Wanita</label>
+                                            <label>Nama Ibu</label>
                                             <input type="text" class="form-control" placeholder="Nama Ibu Wanita" name="nama_ibu_wanita">
                                         </div>
                                     </div>

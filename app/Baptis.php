@@ -23,10 +23,10 @@ class Baptis extends Model
     ];
 
     public function User(){
-        return $this->belongsTo('app\User');
+        return $this->belongsTo('App\User');
     }
 
     public function Pendeta(){
-        return $this->belongsTo('app\Pendeta');
+        return $this->belongsTo('App\Pendeta', 'pendeta_id');
     }
 }

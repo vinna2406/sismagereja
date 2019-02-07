@@ -3,7 +3,7 @@
 
 	@endsection
 	@section('content')
-	<div class="page-wrapper" style="background-color: #f2f4fb;">
+	<div class="page-wrapper">
 		<div class="row page-titles">
 	        <div class="col-md-5 align-self-center">
 	            <h3 class="text-primary">Anggota</h3> </div>
@@ -14,9 +14,9 @@
 	            </ol>
 	        </div>
 	    </div>
-		<div class="container-fluid">
+		<div class="container-fluid" >
 			<!-- <div class="row"> -->
-				<div class="card" style="background-color: #ebf0f6;">
+				<div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Anggota</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
@@ -26,13 +26,13 @@
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center;">
                                         <th>No</th>
-                                        <th style="text-align:center;" >Nama</th>
+                                        <th>Nama</th>
                                         <th>Tanggal Lahir</th>
                                         <th>Jenis Kelamin</th>
-                                        <th style="text-align:center;" >Nama Ibu</th>
-                                        <th style="text-align:center;" >Status</th>
+                                        <th>Nama Ibu</th>
+                                        <th>Status</th>
                                         <!-- <th>Foto</th>
                                         <th>Status</th>
                                         <th>Baptis</th>
@@ -45,10 +45,14 @@
                                 		$no=1;
                                 	@endphp
                                     @foreach($anggotas as $item)
+                                   	@php
+                                   		$tgl = $item->tanggal_lahir;
+                                   		$tanggal_lahir = date('d/m/Y', strtotime($tgl));
+                                   	@endphp
                                     	<tr>
                                     		<td>{{$no++}}</td>
                                     		<td>{{$item->nama}}</td>
-                                    		<td>{{$item->tanggal_lahir}}</td>
+                                    		<td>{{$tanggal_lahir}}</td>
                                     		<td>{{$item->jenis_kelamin}}</td>
                                     		<td>{{$item->nama_ibu}}</td>
                                     		<!-- <td>
@@ -78,7 +82,7 @@
                                     		</td> -->
                                     		<td>
                                     			<center><button class="btn btn-info" data-toggle="modal" data-target="#detailAnggota{{ $item->id }}">Lihat</button>
-                                    			<a href="{{Help::url('anggota/'.$item->id.'/edit')}}" class="btn btn-warning ">Edit</a></center>
+                                    			<a href="{{Help::url('anggota/'.$item->id.'/edit')}}" class="btn btn-warning">Edit</a></center>
                                     		</td>
                                     	</tr>
                                     	<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="detailAnggota{{ $item->id }}">
@@ -105,7 +109,7 @@
 						                                    		<h4>Status</h4>
 						                                    	<!-- </div> -->
 					                                    	</div>
-					                                    	<div class="col-md-4">
+					                                    	<div class="col-md-5">
 					                                    		<h4>: {{$item->nama}}</h4>
 					                                    		<h4>: {{$item->tempat_lahir}}</h4>
 					                                    		<h4>: {{$item->tanggal_lahir}}</h4>
@@ -119,8 +123,8 @@
 					                                    	<!-- 	<h4>: {{$item->foto}}</h4> -->
 					                                    		<h4>: {{$item->status}}</h4>
 					                                    	</div>	
-					                                    	<div class="col-md-4" style="float: right;">
-						                                    	<img src="{{url('images/anggota/'.$item->foto)}}" width="200px">
+					                                    	<div class="col-md-3" style="float: right;">
+						                                    	<img src="{{url('images/anggota/'.$item->foto)}}" width="150px">
 						                                    </div>
 					                                    </div>
 					                                </div> 

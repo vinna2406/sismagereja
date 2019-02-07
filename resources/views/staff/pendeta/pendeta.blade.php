@@ -16,7 +16,7 @@
         </div>
         <div class="container-fluid">
             <!-- <div class="row"> -->
-                <div class="card" style="background-color: #ebf0f6;">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Pendeta</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
@@ -26,13 +26,13 @@
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center;" >
                                         <th>No</th>
-                                        <th style="text-align:center;">Nama</th>
+                                        <th>Nama</th>
                                         <th>Tanggal Lahir</th>
-                                        <th>Jenis Kelamin</th>
-                                        <th style="text-align:center;">Alamat</th>
-                                        <th style="text-align:center;">Status</th>
+                                        <!-- <th>Jenis Kelamin</th> -->
+                                        <th>Alamat</th>
+                                        <th>Status</th>
                                         <th style="text-align:center;">Opsi</th>
                                     </tr>
                                 </thead>
@@ -41,11 +41,15 @@
                                         $no=1;
                                     @endphp
                                     @foreach($pendetas as $item)
+                                    @php
+                                        $tgl = $item->tanggal_lahir;
+                                        $tanggal_lahir = date('d/m/Y', strtotime($tgl));
+                                    @endphp
                                         <tr>
                                             <td>{{$no++}}</td>
                                             <td>{{$item->nama}}</td>
-                                            <td>{{$item->tanggal_lahir}}</td>
-                                            <td>{{$item->jenis_kelamin}}</td>
+                                            <td>{{$tanggal_lahir}}</td>
+                                            <!-- <td>{{$item->jenis_kelamin}}</td> -->
                                             <td>{{$item->alamat}}</td>
                                             <td>
                                                 @if($item->status == 'aktif')
@@ -78,7 +82,7 @@
                                                                 <!-- <h4>Foto</h4> -->
                                                                 <h4>Status</h4>
                                                             </div>
-                                                            <div class="col-md-4">
+                                                            <div class="col-md-5">
                                                                 <h4>: {{$item->nama}}</h4>
                                                                 <h4>: {{$item->tempat_lahir}}</h4>
                                                                 <h4>: {{$item->tanggal_lahir}}</h4>
@@ -88,8 +92,8 @@
                                                                 <!-- <h4>: {{$item->foto}}</h4> -->
                                                                 <h4>: {{$item->status}}</h4>
                                                             </div>  
-                                                            <div class="col-md-4" style="float: right;">
-                                                                <img src="{{url('images/pendeta/'.$item->foto)}}" width="200px">
+                                                            <div class="col-md-3" style="float: right;">
+                                                                <img src="{{url('images/pendeta/'.$item->foto)}}" width="150px">
                                                             </div>
                                                         </div>     
                                                     </div> 

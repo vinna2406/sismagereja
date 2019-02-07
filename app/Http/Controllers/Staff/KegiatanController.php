@@ -16,8 +16,9 @@ use Session;
 class KegiatanController extends Controller
 {
  	public function tambahKegiatan(){
- 		$pendetas = Pendeta::where('status', '=', 'aktif')->get();
-    	return view('staff.kegiatan.tambahkegiatan', compact('pendetas'));
+        return view('staff.kegiatan.tambahkegiatan');
+ 		// $pendetas = Pendeta::where('status', '=', 'aktif')->get();
+   //  	return view('staff.kegiatan.tambahkegiatan', compact('pendetas'));
     }
 
     public function storeKegiatan(Request $r){
@@ -88,7 +89,7 @@ class KegiatanController extends Controller
     	 	'jenis_kegiatan' => $r->jenis_kegiatan,
     	 	'keterangan' => $r->keterangan,
             'nama_pendeta' => $r->nama_pendeta,
-    	 	'status' => 'aktif'
+    	 	'status' => $r->status,
     	]);
 
     	 Session::flash('success', 'Kegiatan baru berhasil ditambahkan!');

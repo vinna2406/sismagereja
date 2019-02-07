@@ -16,24 +16,27 @@
         </div>
         <div class="container-fluid">
             <!-- <div class="row"> -->
-                <div class="card" style="background-color: #ebf0f6;">
+                <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Data Admin</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon I-1 Bali</h6>
                         <div>
-                            <a href="{{Help::url('admin/tambah-admin')}}" class="btn btn-danger">Tambah Admin</a>
+                            <a href="{{Help::url('admin/tambah-admin')}}" class="btn btn-primary ">Tambah Admin</a>
+                        </div>
+                        <div>
+                            <a href="{{Help::url('admin/tambah-admin')}}" class="btn btn-primary ">Cetak Admin</a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">
                                 <thead>
-                                    <tr>
+                                    <tr style="text-align:center;">
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
-                                        <th>Jenis Kelamin</th>
+                                        <!-- <th>Jenis Kelamin</th> -->
                                         <th>No Telepon</th>
                                         <th>Status</th>                                     
-                                        <th>Opsi</th>
+                                        <th style="text-align:center;" >Opsi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +48,7 @@
                                             <td>{{$no++}}</td>
                                             <td>{{$item->nama}}</td>
                                             <td>{{$item->email}}</td>
-                                            <td>{{$item->jenis_kelamin}}</td>
+                                            <!-- <td>{{$item->jenis_kelamin}}</td> -->
                                             <td>{{$item->no_telepon}}</td>
                                             <td>
                                                 @if($item->status == 'aktif')
@@ -55,8 +58,8 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#detailAdmin{{ $item->id }}">Lihat</button>
-                                                <a href="{{Help::url('admin/'.$item->id.'/edit')}}" class="btn btn-warning btn-sm">Edit</a>
+                                                <button class="btn btn-info" data-toggle="modal" data-target="#detailAdmin{{ $item->id }}">Lihat</button>
+                                                <a href="{{Help::url('admin/'.$item->id.'/edit')}}" class="btn btn-warning ">Edit</a>
                                             </td>
                                         </tr>
                                         <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true" id="detailAdmin{{ $item->id }}">
@@ -76,11 +79,11 @@
                                                                     <h4>Jenis Kelamin</h4>
                                                                     <h4>Alamat</h4>
                                                                     <h4>No Telepon</h4>
-                                                                <!--     <h4>Password</h4> -->
+                                                    <!--                 <h4>Password</h4> -->
                                                                     <h4>Status</h4>
                                                                 </div>
                                                             </div>
-                                                            <div class="col-md-4">
+                                                            <div class="col-md-5">
                                                                 <h4>: {{$item->nama}}</h4>
                                                                 <h4>: {{$item->email}}</h4>
                                                                 <h4>: {{$item->tempat_lahir}}</h4>
@@ -88,16 +91,16 @@
                                                                 <h4>: {{$item->jenis_kelamin}}</h4>
                                                                 <h4>: {{$item->alamat}}</h4>
                                                                 <h4>: {{$item->no_telepon}}</h4>
-                                                            <!--     <h4>: {{$item->password}}</h4> -->
+                                                      <!--           <h4>: {{$item->password}}</h4> -->
                                                                 <h4>: {{$item->status}}</h4>
                                                             </div>
-                                                            <div class="col-md-4" style="float: right;">
-                                                                <img src="{{url('images/admin/'.$item->foto)}}" width="200px">
+                                                            <div class="col-md-3" style="float: right;">
+                                                                <img src="{{url('images/admin/'.$item->foto)}}" width="150px">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <a href="{{Help::url('admin')}}" class="btn btn-primary btn-md">Kembali</a>
+                                                        <a href="{{Help::url('admin')}}" class="btn btn-primary">Kembali</a>
                                                     </div>
                                                 </div>
                                             </div>

@@ -72,13 +72,8 @@
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Pendeta</label>
-                                            <input type="text" class="form-control" placeholder="Nama Pendeta" name="nama_pendeta">
-                                            <!-- <select class="form-control" name="pendeta_id">
-                                                @foreach($pendetas as $pendeta)
-                                                    <option value="{{$pendeta->id}}">{{$pendeta->nama}}</option>
-                                                @endforeach
-                                            </select> -->
+                                            <label>Pemimpin Kegiatan</label>
+                                            <input type="text" class="form-control" placeholder="Pemimpin Kegiatan" name="nama_pendeta">
                                         </div>
                                     </div>
                                     <div class="col-lg-6">

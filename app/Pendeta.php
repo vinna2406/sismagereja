@@ -19,10 +19,10 @@ class Pendeta extends Model
     ];
 
     public function Kegiatan(){
-        return $this->hasOne('app\Kegiatan');
+        return $this->hasOne('App\Kegiatan');
     }
 
     public function Baptis(){
-        return $this->hasOne('app\Baptis');
+        return $this->hasOne('App\Baptis');
     }
 }
