@@ -82,12 +82,7 @@
                                             <input type="text" class="form-control" placeholder="Lokasi" name="lokasi">
                                         </div>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label>Keterangan</label>
-                                            <input type="text" class="form-control" placeholder="Keterangan" name="keterangan">
-                                        </div>
-                                    </div>
+                                    
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Status</label>
@@ -95,6 +90,12 @@
                                                 <option value="aktif">Aktif</option>
                                                 <option value="nonaktif">Non Aktif</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>Keterangan</label>
+                                            <textarea name="keterangan" class="form-control" style="height: 150px"></textarea>
                                         </div>
                                     </div>
                                 </div>

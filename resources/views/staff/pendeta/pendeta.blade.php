@@ -22,6 +22,7 @@
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
                         <div>
                             <a href="{{Help::url('pendeta/tambah-pendeta')}}" class="btn btn-primary">Tambah Pendeta </a>
+                            <a href="{{Help::url('pendeta/cetak-pendeta')}}" class="btn btn-danger">Cetak Baptis</a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">

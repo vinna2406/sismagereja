@@ -22,7 +22,7 @@ class CreateKegiatansTable extends Migration
             $table->date('tanggal');
             $table->string('nama_pendeta');
             $table->string('lokasi');
-            $table->string('keterangan');
+            $table->text('keterangan');
             $table->enum('status', ['aktif','nonaktif']);
             $table->timestamps();
 

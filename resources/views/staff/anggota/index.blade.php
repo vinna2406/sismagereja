@@ -21,7 +21,8 @@
                         <h4 class="card-title">Data Anggota</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
                         <div>
-                        	<a href="{{Help::url('anggota/tambah-anggota')}}" class="btn btn-primary">Tambah Anggota </a>
+                    		<a href="{{Help::url('anggota/tambah-anggota')}}" class="btn btn-primary">Tambah Anggota </a>
+                    		<a href="{{Help::url('anggota/cetak-anggota')}}" class="btn btn-danger">Cetak Anggota </a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">

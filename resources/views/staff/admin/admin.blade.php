@@ -22,9 +22,7 @@
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon I-1 Bali</h6>
                         <div>
                             <a href="{{Help::url('admin/tambah-admin')}}" class="btn btn-primary ">Tambah Admin</a>
-                        </div>
-                        <div>
-                            <a href="{{Help::url('admin/tambah-admin')}}" class="btn btn-primary ">Cetak Admin</a>
+                            <a href="{{Help::url('admin/cetak-admin')}}" class="btn btn-danger ">Cetak Admin</a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">

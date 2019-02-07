@@ -21,7 +21,8 @@
                         <h4 class="card-title">Data Baptis</h4>
                         <h6 class="card-subtitle">Gereja Bethel Indonesia Rayon 1-I</h6>
                         <div>
-                            <a href="{{Help::url('baptis/tambah-baptis')}}" class="btn btn-primary">Tambah Baptis </a>
+                            <a href="{{Help::url('baptis/tambah-baptis')}}" class="btn btn-primary">Tambah Baptis</a>
+                            <a href="{{Help::url('baptis/cetak-baptis')}}" class="btn btn-danger">Edit Baptis</a>
                         </div>
                         <div class="table-responsive m-t-40" style="background-color: white;">
                             <table id="myTable" class="table table-bordered table-striped" style="background-color: white;">

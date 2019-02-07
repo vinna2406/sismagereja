@@ -14,16 +14,16 @@
                 <ul class="navbar-nav my-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-muted  " href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src="{{asset('backend/images/users/5.jpg')}}" alt="user" class="profile-pic" />
+                            <img src="{{asset('backend/images/users/9.jpg')}}" alt="user" class="profile-pic" />
                             {{ Auth::user()->email }}
                             <i class="fa fa-caret-down"></i>
                             </a>
                         <div class="dropdown-menu dropdown-menu-right animated zoomIn" style="background-color: #eef2f5;">
                             <ul class="dropdown-user">
-                                <li><a href="#"><i class="ti-user"></i> Profile</a></li>
+                                <!-- <li><a href="#"><i class="ti-user"></i> Profile</a></li>
                                 <li><a href="#"><i class="ti-wallet"></i> Balance</a></li>
                                 <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                                <li><a href="#"><i class="ti-settings"></i> Setting</a></li>
+                                <li><a href="#"><i class="ti-settings"></i> Setting</a></li> -->
                                 <li><a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Logout</a></li>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     {{ csrf_field() }}
