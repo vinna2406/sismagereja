@@ -8,7 +8,8 @@
 	<title>Sismagereja | Page</title>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('frontend/css/style.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{asset('frontend/css/style.css')}}" />
+	{{-- <link rel="stylesheet" href="{{asset('images/gbi.png')}}" type="icon"> --}}
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	@yield('css1')
 </head>
