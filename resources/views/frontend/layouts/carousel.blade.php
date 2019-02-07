@@ -8,7 +8,7 @@
                     </div>
                     <h1 class="white-text">"Selamat</h1>
                     <h1 class="white-text">Datang!"</h1>
-                    <p class="white-text">- di SISMAGEREJA -</p>
+                    <p class="white-text"></p>
                 </div>
             </div>
         </div>
